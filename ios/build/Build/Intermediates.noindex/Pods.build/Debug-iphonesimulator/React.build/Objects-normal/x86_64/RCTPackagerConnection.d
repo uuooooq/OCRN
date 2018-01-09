@@ -1,0 +1,30 @@
+dependencies: \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/DevSupport/RCTPackagerConnection.m \
+  /Users/wenter.zhu/Documents/src/OCRN/ios/Pods/Target\ Support\ Files/React/React-prefix.pch \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTBundleURLProvider.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/ReactCommon/yoga/yoga/YGMacros.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/Libraries/WebSocket/RCTReconnectingWebSocket.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/Libraries/WebSocket/RCTSRWebSocket.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/DevSupport/RCTPackagerConnectionBridgeConfig.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/DevSupport/RCTPackagerConnectionConfig.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/DevSupport/RCTReloadPackagerMethod.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/wenter.zhu/Documents/src/OCRN/node_modules/react-native/React/DevSupport/RCTSamplingProfilerPackagerMethod.h
