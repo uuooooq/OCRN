@@ -7,6 +7,8 @@ target 'OC_RN' do
 
   # Pods for OC_RN
 
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
   target 'OC_RNTests' do
     inherit! :search_paths
     # Pods for testing

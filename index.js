@@ -6,18 +6,60 @@ import {
   Text,
   View,
   NativeModules,
-  Button
+  Button,
+  TouchableOpacity
 } from 'react-native';
 
 var nativeMethods = NativeModules.NativeMethodsCall;
+import Video from 'react-native-video';
+
+let mp4video = require('./test.mp4');
+
 
 const requireNativeComponent = require('requireNativeComponent');
 
+
 class RNHighScores extends React.Component {
-  
+constructor(props) {
+  super(props);
+  this.state ={
+    rate: 1,
+    volume: 1,
+    muted: false,
+    resizeMode: 'contain',
+    duration: 0.0,
+    currentTime: 0.0,
+    controls: false,
+    paused: false,
+    skin: 'custom',
+    ignoreSilentSwitch: null,
+    isBuffering: false,
+    showVideo:false
+};
+}
 
   btnPress(){
     nativeMethods.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+  }
+
+  btnPress1(){
+    this.setState({
+      showVideo:true
+    });
+    this.player.seek(0);
+  }
+
+  actonPlay(){
+    this.setState({
+      showVideo:true
+    });
+    //this.player.seek(0);
+  }
+
+  videoClick(){
+    this.setState({
+      showVideo:false
+    });
   }
 
   render() {
@@ -25,6 +67,25 @@ class RNHighScores extends React.Component {
       score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
     );
     var FlexibleSizeExampleView = requireNativeComponent('FlexibleSizeExampleView');
+    
+    //let videoView = this.state.showVideo ?  : null;
+    let videoView = null;
+    if(this.state.showVideo){
+      
+      videoView = (
+        <TouchableOpacity  onPress={this.videoClick.bind(this)} >
+      <Video
+        source={mp4video}
+        style={styles.fullScreen}
+        ref={(ref) => {
+        this.player = ref
+        }}/>
+        </TouchableOpacity>
+        );
+      
+
+    }
+
     return (
       
       <View style={styles.container}>
@@ -41,8 +102,11 @@ class RNHighScores extends React.Component {
           accessibilityLabel="Learn more about this purple button"
         />
         <View style={styles.nativeViewBG}/>
-                <FlexibleSizeExampleView style={styles.nativeView}>
-      </FlexibleSizeExampleView>
+        
+        <FlexibleSizeExampleView style={styles.nativeView}>
+        </FlexibleSizeExampleView>
+       
+      {videoView}
       </View>
     );
   }
@@ -96,7 +160,21 @@ const styles = StyleSheet.create({
     bottom:0,
     left:0,
     right:0
-  }
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
+  fullScreen: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+}
 });
 
 // 整体js模块的名称
