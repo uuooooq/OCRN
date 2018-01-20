@@ -34,14 +34,15 @@ class RNHighScores extends React.Component {
         <Text style={styles.scores}>    
           {contents}
         </Text>
-        <FlexibleSizeExampleView style={styles.nativeView}>
-      </FlexibleSizeExampleView>
         <Button 
           onPress={this.btnPress.bind(this)}
           title="call native methods"
           color="blue"
           accessibilityLabel="Learn more about this purple button"
         />
+        <View style={styles.nativeViewBG}/>
+                <FlexibleSizeExampleView style={styles.nativeView}>
+      </FlexibleSizeExampleView>
       </View>
     );
   }
@@ -72,11 +73,29 @@ const styles = StyleSheet.create({
   text: {
     marginBottom: 20
   },
+  nativeViewBG: {
+    //height: 700,
+    //width: 600,
+    //backgroundColor: '#333333',
+    //flex:1
+    position:'absolute',
+    top: 0,
+    bottom:0,
+    left:0,
+    right:0,
+    backgroundColor:'black',
+    opacity:0.5
+  },
   nativeView: {
     //height: 700,
     //width: 600,
     //backgroundColor: '#333333',
-    flex:1
+    //flex:1
+    position:'absolute',
+    top: 0,
+    bottom:0,
+    left:0,
+    right:0
   }
 });
 
