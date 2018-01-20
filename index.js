@@ -35,9 +35,6 @@ class RNHighScores extends React.Component {
           {contents}
         </Text>
         <FlexibleSizeExampleView style={styles.nativeView}>
-        <Text style={styles.text}>
-          Error: This demo is accessible only from RNTester app
-        </Text>
       </FlexibleSizeExampleView>
         <Button 
           onPress={this.btnPress.bind(this)}
@@ -53,9 +50,10 @@ class RNHighScores extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    //justifyContent: 'center',
+    //alignItems: 'center',
     backgroundColor: '#FFFFFF',
+    flexDirection: 'column',
   },
   highScoresTitle: {
     fontSize: 20,
@@ -75,8 +73,10 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   nativeView: {
-    height: 140,
-    width: 280
+    //height: 700,
+    //width: 600,
+    //backgroundColor: '#333333',
+    flex:1
   }
 });
 

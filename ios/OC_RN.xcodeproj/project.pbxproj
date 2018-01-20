@@ -11,6 +11,7 @@
 		8DF77690446D27869F162950 /* libPods-OC_RN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A496BCBBBE151211203F17 /* libPods-OC_RN.a */; };
 		A95AAC3A9C55DB8C389518E2 /* libPods-OC_RNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5E501A294292EBC9EA26BB /* libPods-OC_RNTests.a */; };
 		C3219FD9201369B90044D16A /* FlexibleSizeExampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3219FD8201369B90044D16A /* FlexibleSizeExampleView.m */; };
+		C3219FDB2013711E0044D16A /* crazyADs_2D_ani_Mobile_704x396 in Resources */ = {isa = PBXBuildFile; fileRef = C3219FDA2013711E0044D16A /* crazyADs_2D_ani_Mobile_704x396 */; };
 		C34A49982003670200FEBB50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C34A49972003670200FEBB50 /* AppDelegate.m */; };
 		C34A499B2003670200FEBB50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C34A499A2003670200FEBB50 /* ViewController.m */; };
 		C34A499E2003670200FEBB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34A499C2003670200FEBB50 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		AADD4720F9D8F9ED4E13B4F7 /* Pods-OC_RNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OC_RNTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OC_RNTests/Pods-OC_RNTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3219FD7201369B90044D16A /* FlexibleSizeExampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexibleSizeExampleView.h; sourceTree = "<group>"; };
 		C3219FD8201369B90044D16A /* FlexibleSizeExampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlexibleSizeExampleView.m; sourceTree = "<group>"; };
+		C3219FDA2013711E0044D16A /* crazyADs_2D_ani_Mobile_704x396 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = crazyADs_2D_ani_Mobile_704x396; sourceTree = "<group>"; };
 		C34A49932003670200FEBB50 /* OC_RN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OC_RN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34A49962003670200FEBB50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C34A49972003670200FEBB50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		C34A49952003670200FEBB50 /* OC_RN */ = {
 			isa = PBXGroup;
 			children = (
+				C3219FDA2013711E0044D16A /* crazyADs_2D_ani_Mobile_704x396 */,
 				C3219FD7201369B90044D16A /* FlexibleSizeExampleView.h */,
 				C3219FD8201369B90044D16A /* FlexibleSizeExampleView.m */,
 				C34A49962003670200FEBB50 /* AppDelegate.h */,
@@ -294,6 +297,7 @@
 			files = (
 				C34A49A32003670200FEBB50 /* LaunchScreen.storyboard in Resources */,
 				C34A49A02003670200FEBB50 /* Assets.xcassets in Resources */,
+				C3219FDB2013711E0044D16A /* crazyADs_2D_ani_Mobile_704x396 in Resources */,
 				C34A499E2003670200FEBB50 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
