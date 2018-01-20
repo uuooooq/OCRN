@@ -11,6 +11,8 @@ import {
 
 var nativeMethods = NativeModules.NativeMethodsCall;
 
+const requireNativeComponent = require('requireNativeComponent');
+
 class RNHighScores extends React.Component {
   
 
@@ -22,7 +24,9 @@ class RNHighScores extends React.Component {
     var contents = this.props["scores"].map(
       score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
     );
+    var FlexibleSizeExampleView = requireNativeComponent('FlexibleSizeExampleView');
     return (
+      
       <View style={styles.container}>
         <Text style={styles.highScoresTitle}>
           2048 High Scores!
@@ -30,6 +34,11 @@ class RNHighScores extends React.Component {
         <Text style={styles.scores}>    
           {contents}
         </Text>
+        <FlexibleSizeExampleView style={styles.nativeView}>
+        <Text style={styles.text}>
+          Error: This demo is accessible only from RNTester app
+        </Text>
+      </FlexibleSizeExampleView>
         <Button 
           onPress={this.btnPress.bind(this)}
           title="call native methods"
@@ -58,6 +67,17 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: '#F5FCFF',
+  // },
+  text: {
+    marginBottom: 20
+  },
+  nativeView: {
+    height: 140,
+    width: 280
+  }
 });
 
 // 整体js模块的名称
