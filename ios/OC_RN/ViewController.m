@@ -38,7 +38,7 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
 - (IBAction)showRNBtnClick:(id)sender {
     NSLog(@"High Score Button Pressed");
     NSURL *jsCodeLocation = [NSURL
-                             URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];//localhost
+                             URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];//
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
                          moduleName        : @"OCRN"
