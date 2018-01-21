@@ -34,7 +34,8 @@ constructor(props) {
     skin: 'custom',
     ignoreSilentSwitch: null,
     isBuffering: false,
-    showVideo:false
+    showVideo:false,
+    showImagesAnimation:false
 };
 }
 
@@ -73,17 +74,25 @@ constructor(props) {
     if(this.state.showVideo){
       
       videoView = (
-        <TouchableOpacity  onPress={this.videoClick.bind(this)} >
       <Video
         source={mp4video}
         style={styles.fullScreen}
         ref={(ref) => {
         this.player = ref
         }}/>
-        </TouchableOpacity>
         );
-      
+    }
 
+    let imageAnimationView = null;
+    if(this.state.showImagesAnimation){
+
+      imageAnimationView = (
+        <View>
+        <View style={styles.nativeViewBG}/>
+        <FlexibleSizeExampleView style={styles.nativeView}>
+        </FlexibleSizeExampleView>
+        </View>
+      );
     }
 
     return (
@@ -101,12 +110,8 @@ constructor(props) {
           color="blue"
           accessibilityLabel="Learn more about this purple button"
         />
-        <View style={styles.nativeViewBG}/>
-        
-        <FlexibleSizeExampleView style={styles.nativeView}>
-        </FlexibleSizeExampleView>
-       
-      {videoView}
+        {imageAnimationView}
+        {videoView}
       </View>
     );
   }
