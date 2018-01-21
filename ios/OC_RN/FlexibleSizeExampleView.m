@@ -33,7 +33,7 @@ RCT_EXPORT_MODULE();
 @end
 
 
-@interface FlexibleSizeExampleView (){
+@interface FlexibleSizeExampleView ()<RCTBridgeModule>{
     UIImageView *_imgView;
     
     NSMutableArray<UIImage *> *_imageArr;
@@ -44,13 +44,14 @@ RCT_EXPORT_MODULE();
 
 @implementation FlexibleSizeExampleView
 
+RCT_EXPORT_MODULE(FlexibleSizeExampleViewCall);
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
   if ((self = [super initWithFrame:frame])) {
       _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 352, 198)];
       
-      _imgView.image = [UIImage imageNamed:@"crazyADs_2D_ani_Mobile_704x396/crazyADs_2D ani_Mobile_704x396_00000.png"];
+      _imgView.image = [UIImage imageNamed:@"crazyADs_2D_ani_Mobile_704x396/crazyADs_2D ani_Mobile_704x396_00060.png"];
       
       [self addSubview:_imgView];
       
@@ -75,42 +76,70 @@ RCT_EXPORT_MODULE();
           // 加入数组
           [_imageArr addObject:image];
       }
-      // 开始按钮
-      UIButton *imgViewButtonStart = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-      [imgViewButtonStart setFrame:CGRectMake(20, 400, 200, 50)];
-      [imgViewButtonStart setTitle:@"开始动画" forState:UIControlStateNormal];
-      [imgViewButtonStart setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-      [imgViewButtonStart addTarget:self action:@selector(stratAction) forControlEvents:UIControlEventTouchUpInside];
-      [self addSubview:imgViewButtonStart];
+//      // 开始按钮
+//      UIButton *imgViewButtonStart = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//      [imgViewButtonStart setFrame:CGRectMake(20, 400, 200, 50)];
+//      [imgViewButtonStart setTitle:@"开始动画" forState:UIControlStateNormal];
+//      [imgViewButtonStart setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//      [imgViewButtonStart addTarget:self action:@selector(stratAction) forControlEvents:UIControlEventTouchUpInside];
+//      [self addSubview:imgViewButtonStart];
+//
+//      // 暂停按钮
+//      UIButton *imgViewButtonStop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//      [imgViewButtonStop setFrame:CGRectMake(200, 400, 200, 50)];
+//      [imgViewButtonStop setTitle:@"停止动画" forState:UIControlStateNormal];
+//      [imgViewButtonStop setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//      [imgViewButtonStop addTarget:self action:@selector(stopAction) forControlEvents:UIControlEventTouchUpInside];
+//      [self addSubview:imgViewButtonStop];
       
-      // 暂停按钮
-      UIButton *imgViewButtonStop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-      [imgViewButtonStop setFrame:CGRectMake(200, 400, 200, 50)];
-      [imgViewButtonStop setTitle:@"停止动画" forState:UIControlStateNormal];
-      [imgViewButtonStop setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-      [imgViewButtonStop addTarget:self action:@selector(stopAction) forControlEvents:UIControlEventTouchUpInside];
-      [self addSubview:imgViewButtonStop];
+      dispatch_async(dispatch_get_main_queue(), ^{
+          [self setUserInteractionEnabled:YES];
+          [_imgView setUserInteractionEnabled:YES];
+          // 设置动画图片
+          _imgView.animationImages = _imageArr;
+          
+          // 设置动画的播放次数
+          _imgView.animationRepeatCount = 1;
+          
+          // 设置播放时长
+          // 1秒30帧, 一张图片的时间 = 1/30 = 0.03333 20 * 0.0333
+          _imgView.animationDuration = 3.0;
+          
+          // 开始动画
+          [_imgView startAnimating];
+          //_imgView.image =
+      });
       
   }
   return self;
 }
 
-- (void)stratAction {
-    
-    // 设置动画图片
-    _imgView.animationImages = _imageArr;
-    
-    // 设置动画的播放次数
-    _imgView.animationRepeatCount = 1;
-    
-    // 设置播放时长
-    // 1秒30帧, 一张图片的时间 = 1/30 = 0.03333 20 * 0.0333
-    _imgView.animationDuration = 3.0;
-    
-    // 开始动画
-    [_imgView startAnimating];
-    
+RCT_EXPORT_METHOD(addEvent1:(NSString *)name location:(NSString *)location)
+{
+    RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
+    //[self stratAction];
 }
+
+//- (void)stratAction {
+//
+//
+//
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        // 设置动画图片
+//        _imgView.animationImages = _imageArr;
+//
+//        // 设置动画的播放次数
+//        _imgView.animationRepeatCount = 1;
+//
+//        // 设置播放时长
+//        // 1秒30帧, 一张图片的时间 = 1/30 = 0.03333 20 * 0.0333
+//        _imgView.animationDuration = 3.0;
+//
+//        // 开始动画
+//        [_imgView startAnimating];
+//    });
+//
+//}
 
 @end
 

@@ -11,17 +11,20 @@ import {
 } from 'react-native';
 
 var nativeMethods = NativeModules.NativeMethodsCall;
+var viewMethods = NativeModules.FlexibleSizeExampleViewCall;
+
 import Video from 'react-native-video';
 
 let mp4video = require('./test.mp4');
 
 
 const requireNativeComponent = require('requireNativeComponent');
-
+var FlexibleSizeExampleView = requireNativeComponent('FlexibleSizeExampleView');
 
 class RNHighScores extends React.Component {
 constructor(props) {
   super(props);
+  
   this.state ={
     rate: 1,
     volume: 1,
@@ -39,9 +42,19 @@ constructor(props) {
 };
 }
 
+
+
   btnPress(){
-    nativeMethods.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+    //nativeMethods.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+    this.setState({
+      showImagesAnimation:true
+    });
+    viewMethods.addEvent1('Birthday Party', '4 Privet Drive, Surrey');
   }
+
+  // btnPress3(){
+  //   nativeMethods.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+  // }
 
   btnPress1(){
     this.setState({
@@ -52,7 +65,8 @@ constructor(props) {
 
   actonPlay(){
     this.setState({
-      showVideo:true
+      showVideo:true,
+      showImagesAnimation:false
     });
     //this.player.seek(0);
   }
@@ -63,11 +77,17 @@ constructor(props) {
     });
   }
 
+  videoEnd(){
+    this.setState({
+      showVideo:false
+    });
+  }
+
   render() {
     var contents = this.props["scores"].map(
       score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
     );
-    var FlexibleSizeExampleView = requireNativeComponent('FlexibleSizeExampleView');
+    
     
     //let videoView = this.state.showVideo ?  : null;
     let videoView = null;
@@ -79,7 +99,9 @@ constructor(props) {
         style={styles.fullScreen}
         ref={(ref) => {
         this.player = ref
-        }}/>
+        }}
+        onEnd={this.videoEnd.bind(this)}
+        />
         );
     }
 
@@ -87,11 +109,18 @@ constructor(props) {
     if(this.state.showImagesAnimation){
 
       imageAnimationView = (
-        <View>
-        <View style={styles.nativeViewBG}/>
+        <TouchableOpacity onPress={this.actonPlay.bind(this)} >
         <FlexibleSizeExampleView style={styles.nativeView}>
         </FlexibleSizeExampleView>
-        </View>
+        </TouchableOpacity>
+      );
+    }
+
+    let bgView = null;
+    if(this.state.showImagesAnimation || this.state.showVideo){
+
+      bgView = (
+        <View style={styles.nativeViewBG}/>
       );
     }
 
@@ -110,6 +139,7 @@ constructor(props) {
           color="blue"
           accessibilityLabel="Learn more about this purple button"
         />
+        {bgView}
         {imageAnimationView}
         {videoView}
       </View>
