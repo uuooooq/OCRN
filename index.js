@@ -127,15 +127,17 @@ constructor(props) {
     return (
       
       <View style={styles.container}>
-        <Text style={styles.highScoresTitle}>
+        {/* <Text style={styles.highScoresTitle}>
           2048 High Scores!
         </Text>
         <Text style={styles.scores}>    
           {contents}
-        </Text>
+        </Text> */}
+        <View style={{marginTop:100}} />
+        <Text style={styles.highScoresTitle}>这是帧动画演示</Text>
         <Button 
           onPress={this.btnPress.bind(this)}
-          title="call native methods"
+          title="显示"
           color="blue"
           accessibilityLabel="Learn more about this purple button"
         />
@@ -173,10 +175,6 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   nativeViewBG: {
-    //height: 700,
-    //width: 600,
-    //backgroundColor: '#333333',
-    //flex:1
     position:'absolute',
     top: 0,
     bottom:0,
@@ -186,10 +184,6 @@ const styles = StyleSheet.create({
     opacity:0.5
   },
   nativeView: {
-    //height: 700,
-    //width: 600,
-    //backgroundColor: '#333333',
-    //flex:1
     position:'absolute',
     top: 0,
     bottom:0,

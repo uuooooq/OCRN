@@ -49,7 +49,7 @@ RCT_EXPORT_MODULE(FlexibleSizeExampleViewCall);
 - (instancetype)initWithFrame:(CGRect)frame
 {
   if ((self = [super initWithFrame:frame])) {
-      _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 352, 198)];
+      _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 40, 352, 198)];
       
       _imgView.image = [UIImage imageNamed:@"crazyADs_2D_ani_Mobile_704x396/crazyADs_2D ani_Mobile_704x396_00060.png"];
       
